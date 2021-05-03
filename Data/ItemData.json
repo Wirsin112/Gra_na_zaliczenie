@@ -1,0 +1,103 @@
+{
+	"Wood":{
+	"StackSize": 20,
+	"Useable": 0
+	},
+	"RawPotato":{
+	"StackSize": 10,
+	"Useable": 0
+	},
+	"Wedka":{
+	"StackSize": 1,
+	"Useable": 0
+	},
+	"Empty":{
+	"StackSize": 1,
+	"Useable": 0
+	},
+	"PustaMiska":{
+	"StackSize": 3,
+	"Useable": 0
+	},
+	"JapkosSurowe":{
+	"StackSize": 10,
+	"Useable": 0
+	},
+	"CookedPotato":{
+	"StackSize": 1,
+	"Useable": 1,
+	"Food": 25
+	},
+	"japko_kilik":{
+	"StackSize": 1,
+	"Useable": 1,
+	"Food": 20
+	},
+	"Zupa":{
+	"StackSize": 1,
+	"Useable": 1,
+	"Food": 40,
+	},
+	"Warzywa":{
+	"StackSize": 15,
+	"Useable": 0
+	},
+	"Szpula":{
+	"StackSize": 5,
+	"Useable": 0
+	},
+	"Woda":{
+	"StackSize": 5,
+	"Useable": 0
+	},
+	"Nic":{
+	"StackSize": 10,
+	"Useable": 0
+	},
+	"Iron":{
+	"StackSize": 5,
+	"Useable": 0
+	},
+	"Bait":{
+	"StackSize": 3,
+	"Useable": 0
+	},
+	"ZupaCiepla":{
+	"StackSize": 1,
+	"Useable": 1,
+	"Food": 100
+	},
+	"Kilof":{
+	"StackSize": 1,
+	"Useable": 0
+	},
+	"Ryba_pieczona":{
+	"StackSize": 1,
+	"Useable": 1,
+	"Food": 60
+	},
+	"Ryba":{
+	"StackSize": 5,
+	"Useable": 0
+	},
+	"Woda_core":{
+	"StackSize": 1,
+	"Useable": 0
+	},
+	"Ogien_core":{
+	"StackSize": 1,
+	"Useable": 0
+	},
+	"Prad_core":{
+	"StackSize": 1,
+	"Useable": 0
+	},
+	"Trawa_core":{
+	"StackSize": 1,
+	"Useable": 0
+	},
+	"Siekiera":{
+	"StackSize": 1,
+	"Useable": 0
+	}
+}

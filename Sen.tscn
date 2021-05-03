@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Hud/BackgroundShip.png" type="Texture" id=1]
+[ext_resource path="res://Hud/HP_progres.png" type="Texture" id=2]
+[ext_resource path="res://Hud/AvatarHUD.png" type="Texture" id=3]
+[ext_resource path="res://Hud/HP_down.png" type="Texture" id=4]
+[ext_resource path="res://Hud/Food_progres.png" type="Texture" id=5]
+[ext_resource path="res://Styles/GuzikKuchenka_Wcisniety.tres" type="StyleBox" id=6]
+[ext_resource path="res://Styles/GuzikKuchenka.tres" type="StyleBox" id=7]
+[ext_resource path="res://Styles/TloKuchenka.tres" type="StyleBox" id=8]
+[ext_resource path="res://Sen.gd" type="Script" id=9]
+[ext_resource path="res://Hud/ExitArrowCook.png" type="Texture" id=10]
+[ext_resource path="res://Hud/HP_frame.png" type="Texture" id=11]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="Sprite"]
+self_modulate = Color( 0.309804, 0.262745, 0.262745, 0.501961 )
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Sprite/Panel"]
+self_modulate = Color( 0.278431, 0.25098, 0.286275, 1 )
+margin_left = 480.0
+margin_top = 270.0
+margin_right = 520.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 320, 180 )
+custom_styles/panel = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Sprite/Panel/Panel"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 288.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 256, 74 )
+text = "Kazda godzina spedzona na spaniu zabiera 20 pkt glodu i odnawia  10 pkt zdrowia"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Sprite/Panel/Panel"]
+margin_left = 32.0
+margin_top = 90.0
+margin_right = 288.0
+margin_bottom = 164.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 6 )
+text = "Spij"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Gracz" type="Sprite" parent="Sprite"]
+position = Vector2( -489.77, -309.758 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hp" type="TextureProgress" parent="Sprite/Gracz"]
+margin_left = -49.0
+margin_top = -47.0
+margin_right = 147.0
+margin_bottom = -27.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numer_hp" type="Label" parent="Sprite/Gracz/Hp"]
+margin_right = 196.0
+margin_bottom = 18.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Food" type="TextureProgress" parent="Sprite/Gracz"]
+margin_left = -49.0
+margin_top = -26.0
+margin_right = 105.0
+margin_bottom = -13.0
+value = 100.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numer_food" type="Label" parent="Sprite/Gracz/Food"]
+margin_right = 154.0
+margin_bottom = 14.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="Sprite"]
+margin_left = 544.0
+margin_top = -312.0
+margin_right = 608.0
+margin_bottom = -280.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Sprite/Panel/Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Sprite/Exit" to="." method="_on_Exit_pressed"]

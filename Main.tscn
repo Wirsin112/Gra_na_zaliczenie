@@ -1,0 +1,168 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Hud/MainMenuScreen.png" type="Texture" id=1]
+[ext_resource path="res://Hud/SpaceDogeIcon.png" type="Texture" id=2]
+[ext_resource path="res://Back.gd" type="Script" id=3]
+[ext_resource path="res://Fps.gd" type="Script" id=4]
+[ext_resource path="res://Styles/GuzikKuchenka_Wcisniety.tres" type="StyleBox" id=5]
+[ext_resource path="res://Styles/GuzikKuchenka.tres" type="StyleBox" id=6]
+[ext_resource path="res://Styles/TloKuchenka.tres" type="StyleBox" id=7]
+
+[node name="Main" type="Node"]
+
+[node name="Back" type="Node2D" parent="."]
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TextureRect" type="TextureRect" parent="Back"]
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 656, 372.682 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Back/TextureRect"]
+margin_left = -127.373
+margin_top = 502.754
+margin_right = 212.627
+margin_bottom = 848.754
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 169.5, 173 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NGame" type="Button" parent="Back"]
+modulate = Color( 1, 0.545098, 0.545098, 1 )
+self_modulate = Color( 0.815686, 0.756863, 0.756863, 1 )
+margin_left = 512.0
+margin_top = 144.0
+margin_right = 768.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( -426.901, 500.089 )
+text = "Nowa gra"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LGame" type="Button" parent="Back"]
+modulate = Color( 1, 0.545098, 0.545098, 1 )
+self_modulate = Color( 0.815686, 0.756863, 0.756863, 1 )
+margin_left = 513.682
+margin_top = 252.0
+margin_right = 769.682
+margin_bottom = 324.0
+rect_pivot_offset = Vector2( -497.955, -269.705 )
+toggle_mode = true
+text = "Wczytaj Gre"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Samouczek_walki" type="Button" parent="Back"]
+modulate = Color( 1, 0.545098, 0.545098, 1 )
+self_modulate = Color( 0.815686, 0.756863, 0.756863, 1 )
+margin_left = 512.0
+margin_top = 364.0
+margin_right = 768.0
+margin_bottom = 436.0
+rect_pivot_offset = Vector2( 112.497, 37.9825 )
+text = "Samouczek Walki"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Samouczek_gry" type="Button" parent="Back"]
+modulate = Color( 1, 0.545098, 0.545098, 1 )
+self_modulate = Color( 0.815686, 0.756863, 0.756863, 1 )
+margin_left = 512.0
+margin_top = 472.0
+margin_right = 768.0
+margin_bottom = 544.0
+rect_pivot_offset = Vector2( 112.497, 37.9825 )
+text = "Samouczek Gry"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fps" type="Label" parent="Back"]
+margin_left = 2.41879
+margin_top = 2.41973
+margin_right = 42.4188
+margin_bottom = 28.4197
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Back"]
+
+[node name="Warning" type="Panel" parent="Back"]
+self_modulate = Color( 0.309804, 0.262745, 0.262745, 0.501961 )
+margin_left = 1280.0
+margin_right = 2560.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="W" type="Panel" parent="Back/Warning"]
+self_modulate = Color( 0.278431, 0.25098, 0.286275, 1 )
+margin_left = 480.0
+margin_top = 270.0
+margin_right = 800.0
+margin_bottom = 450.0
+custom_styles/panel = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Back/Warning/W"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 288.0
+margin_bottom = 90.0
+text = "Czy chcesz usunac zapis i zaczac od nowa?"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tak" type="Button" parent="Back/Warning/W"]
+margin_left = 32.0
+margin_top = 90.0
+margin_right = 160.0
+margin_bottom = 164.0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Tak"
+
+[node name="Nie" type="Button" parent="Back/Warning/W"]
+margin_left = 160.0
+margin_top = 90.0
+margin_right = 288.0
+margin_bottom = 164.0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Nie"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="Back/NGame" to="Back" method="_on_NGame_mouse_entered"]
+[connection signal="pressed" from="Back/NGame" to="Back" method="_on_NGame_pressed"]
+[connection signal="pressed" from="Back/LGame" to="Back" method="_on_LGame_pressed"]
+[connection signal="pressed" from="Back/Samouczek_walki" to="Back" method="_on_Samouczek_walki_pressed"]
+[connection signal="pressed" from="Back/Samouczek_gry" to="Back" method="_on_Samouczek_gry_pressed"]
+[connection signal="timeout" from="Back/Timer" to="Back" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Back/Warning/W/Tak" to="Back" method="_on_Tak_pressed"]
+[connection signal="pressed" from="Back/Warning/W/Nie" to="Back" method="_on_Nie_pressed"]

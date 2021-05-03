@@ -1,0 +1,309 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Przeciwnik/Heart.png" type="Texture" id=1]
+[ext_resource path="res://Hud/clipart1797737.png" type="Texture" id=2]
+[ext_resource path="res://Przeciwnik/SpriteTentacle.png" type="Texture" id=3]
+[ext_resource path="res://Spell/Spell1.png" type="Texture" id=4]
+[ext_resource path="res://Hud/NewHud.png" type="Texture" id=5]
+[ext_resource path="res://Spell/Spell2.png" type="Texture" id=6]
+[ext_resource path="res://Przeciwnik/Gracz.png" type="Texture" id=7]
+[ext_resource path="res://Spell/Spell4.png" type="Texture" id=8]
+[ext_resource path="res://Spell/Spell3.png" type="Texture" id=9]
+[ext_resource path="res://Hud/Fire_Landscape.png" type="Texture" id=10]
+[ext_resource path="res://Samouczek_Walki.gd" type="Script" id=11]
+
+[sub_resource type="VisualShader" id=1]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx;
+
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Output:0
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( 0, -193 )
+nodes/fragment/0/position = Vector2( 440, 180 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 63.0006
+height = 92.433
+
+[node name="Node2D" type="Node2D"]
+material = SubResource( 2 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Kosmos" type="Sprite" parent="."]
+position = Vector2( 245.658, 696.931 )
+scale = Vector2( 0.666178, 0.668302 )
+texture = ExtResource( 10 )
+offset = Vector2( 591.22, -499.347 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Gracz" type="Node2D" parent="."]
+
+[node name="Gracz" type="Sprite" parent="Gracz"]
+position = Vector2( 205, 520 )
+texture = ExtResource( 7 )
+offset = Vector2( -3, -122 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Serce" type="Sprite" parent="Gracz"]
+position = Vector2( 205, 250 )
+scale = Vector2( 0.612451, 0.510138 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Gracz_Hp" type="Label" parent="Gracz"]
+margin_left = 177.2
+margin_top = 236.378
+margin_right = 230.2
+margin_bottom = 250.378
+rect_scale = Vector2( 0.9, 0.9 )
+rect_pivot_offset = Vector2( 26.5, 7.00002 )
+text = "100/100"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Macka" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Macka"]
+
+[node name="Serce2" type="Sprite" parent="Macka/Area2D"]
+position = Vector2( 1050, 310 )
+scale = Vector2( 0.612451, 0.510138 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Enemy_Hp" type="Label" parent="Macka/Area2D"]
+margin_left = 1030.44
+margin_top = 296.969
+margin_right = 1070.44
+margin_bottom = 310.969
+text = "40/40"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Pole_macki" type="CollisionShape2D" parent="Macka/Area2D"]
+position = Vector2( 1050, 430 )
+scale = Vector2( 0.75, 0.75 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Macka/Area2D"]
+position = Vector2( 1050, 530 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+offset = Vector2( 0.0474243, -127.666 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hood" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Hood"]
+position = Vector2( 640, 360 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Boost" type="TextureButton" parent="Hood"]
+margin_left = 339.0
+margin_top = 834.0
+margin_right = 458.0
+margin_bottom = 948.0
+rect_scale = Vector2( 0.52, 0.52 )
+rect_pivot_offset = Vector2( 97.9583, -434.332 )
+texture_normal = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Attack" type="TextureButton" parent="Hood"]
+margin_left = 367.0
+margin_top = 525.0
+margin_right = 485.0
+margin_bottom = 640.0
+rect_scale = Vector2( 0.52, 0.52 )
+rect_pivot_offset = Vector2( 39.4418, 41.7258 )
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Stun" type="TextureButton" parent="Hood"]
+margin_left = 441.0
+margin_top = 523.0
+margin_right = 555.0
+margin_bottom = 640.0
+rect_scale = Vector2( 0.52, 0.52 )
+rect_pivot_offset = Vector2( 40.8539, 47.2246 )
+texture_normal = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Heal" type="TextureButton" parent="Hood"]
+margin_left = 439.0
+margin_top = 606.0
+margin_right = 554.0
+margin_bottom = 721.0
+rect_scale = Vector2( 0.52, 0.52 )
+rect_pivot_offset = Vector2( 44.7173, 43.7913 )
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="FPS" type="Label" parent="."]
+margin_left = 14.2866
+margin_top = 549.241
+margin_right = 54.2866
+margin_bottom = 563.241
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="."]
+margin_left = 1060.07
+margin_top = 285.414
+margin_right = 1106.07
+margin_bottom = 333.414
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -200.0
+margin_bottom = 75.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Opis_spella" type="Label" parent="Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 190.0
+margin_bottom = 65.0
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 1280.0
+margin_right = 1480.0
+margin_bottom = 75.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Opis_moba" type="Label" parent="Panel2"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 190.0
+margin_bottom = 65.0
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="."]
+margin_left = 370.0
+margin_top = 20.0
+margin_right = 890.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 260, 75 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel3"]
+position = Vector2( 95, 70 )
+scale = Vector2( 0.44, 0.44 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Mow" type="Label" parent="Panel3"]
+margin_left = 200.0
+margin_top = 20.0
+margin_right = 500.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 198.289, 75.5 )
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Panel3"]
+[connection signal="mouse_entered" from="Macka/Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Macka/Area2D" to="." method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Hood/Boost" to="." method="_on_Boost_mouse_entered"]
+[connection signal="mouse_exited" from="Hood/Boost" to="." method="_on_Boost_mouse_exited"]
+[connection signal="pressed" from="Hood/Boost" to="." method="_on_Boost_pressed"]
+[connection signal="mouse_entered" from="Hood/Attack" to="." method="_on_Attack_mouse_entered"]
+[connection signal="mouse_exited" from="Hood/Attack" to="." method="_on_Attack_mouse_exited"]
+[connection signal="pressed" from="Hood/Attack" to="." method="_on_Attack_pressed"]
+[connection signal="mouse_entered" from="Hood/Stun" to="." method="_on_Stun_mouse_entered"]
+[connection signal="mouse_exited" from="Hood/Stun" to="." method="_on_Stun_mouse_exited"]
+[connection signal="pressed" from="Hood/Stun" to="." method="_on_Stun_pressed"]
+[connection signal="mouse_entered" from="Hood/Heal" to="." method="_on_Heal_mouse_entered"]
+[connection signal="mouse_exited" from="Hood/Heal" to="." method="_on_Heal_mouse_exited"]
+[connection signal="pressed" from="Hood/Heal" to="." method="_on_Heal_pressed"]
+[connection signal="timeout" from="Panel3/Timer" to="." method="_on_Timer_timeout"]

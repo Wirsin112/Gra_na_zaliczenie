@@ -1,0 +1,464 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Hud/CookingHUD.png" type="Texture" id=1]
+[ext_resource path="res://Food/japko_kilik.png" type="Texture" id=3]
+[ext_resource path="res://Food/FoodCookedPotato.png" type="Texture" id=4]
+[ext_resource path="res://Cooking.gd" type="Script" id=5]
+[ext_resource path="res://Hud/FoodRamka.png" type="Texture" id=6]
+[ext_resource path="res://Food/Zupa.png" type="Texture" id=7]
+[ext_resource path="res://Food/ZupaCiepla.png" type="Texture" id=8]
+[ext_resource path="res://Hud/ExitArrowCook.png" type="Texture" id=9]
+[ext_resource path="res://Styles/GuzikKuchenka.tres" type="StyleBox" id=10]
+[ext_resource path="res://Styles/GuzikKuchenka_Wcisniety.tres" type="StyleBox" id=11]
+[ext_resource path="res://Styles/TloKuchenka.tres" type="StyleBox" id=12]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Background"]
+margin_left = -533.0
+margin_top = -250.0
+margin_right = 197.0
+margin_bottom = 250.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/ScrollContainer"]
+margin_right = 680.0
+margin_bottom = 524.0
+rect_min_size = Vector2( 680, 500 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pieczony_Ziemniak" type="Panel" parent="Background/ScrollContainer/VBoxContainer"]
+margin_right = 680.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 580, 128 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Name" type="Label" parent="Background/ScrollContainer/VBoxContainer/Pieczony_Ziemniak"]
+margin_left = 300.0
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 14.0
+text = "	Pieczone ziemniakopodobne cos"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opis" type="Label" parent="Background/ScrollContainer/VBoxContainer/Pieczony_Ziemniak"]
+margin_left = 250.0
+margin_top = 32.0
+margin_right = 530.0
+margin_bottom = 96.0
+text = "Przywraca 30 glodu. Jest bardzo smaczny    i choc troche przypomina ziemskie jedzenie."
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "	"
+}
+
+[node name="Przycisk_ziemniak" type="TextureButton" parent="Background/ScrollContainer/VBoxContainer/Pieczony_Ziemniak"]
+margin_left = 100.0
+margin_top = 32.0
+margin_right = 163.109
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pieczony_owoc" type="Panel" parent="Background/ScrollContainer/VBoxContainer"]
+margin_top = 132.0
+margin_right = 680.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 580, 128 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Name" type="Label" parent="Background/ScrollContainer/VBoxContainer/Pieczony_owoc"]
+margin_left = 300.0
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 14.0
+text = "Dojrzaly owoc"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opis" type="Label" parent="Background/ScrollContainer/VBoxContainer/Pieczony_owoc"]
+margin_left = 250.0
+margin_top = 32.0
+margin_right = 530.0
+margin_bottom = 96.0
+text = "Przywraca 15 glodu. Ma sznse na dodatkowy efekt."
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "	"
+}
+
+[node name="Przycisk_Jabklo" type="TextureButton" parent="Background/ScrollContainer/VBoxContainer/Pieczony_owoc"]
+margin_left = 100.0
+margin_top = 32.0
+margin_right = 163.109
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Zupa_Warzywna" type="Panel" parent="Background/ScrollContainer/VBoxContainer"]
+margin_top = 264.0
+margin_right = 680.0
+margin_bottom = 392.0
+rect_min_size = Vector2( 580, 128 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Name" type="Label" parent="Background/ScrollContainer/VBoxContainer/Zupa_Warzywna"]
+margin_left = 300.0
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 14.0
+text = "Zupa prawie warzywna"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opis" type="Label" parent="Background/ScrollContainer/VBoxContainer/Zupa_Warzywna"]
+margin_left = 250.0
+margin_top = 32.0
+margin_right = 530.0
+margin_bottom = 96.0
+text = "Przywraca 20 glodu. Wyglada prawie jak jarzynowa."
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "	"
+}
+
+[node name="Przycisk_zupa" type="TextureButton" parent="Background/ScrollContainer/VBoxContainer/Zupa_Warzywna"]
+margin_left = 100.0
+margin_top = 32.0
+margin_right = 163.109
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Zupa_Warzywna_Ciepla" type="Panel" parent="Background/ScrollContainer/VBoxContainer"]
+margin_top = 396.0
+margin_right = 680.0
+margin_bottom = 524.0
+rect_min_size = Vector2( 580, 128 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Name" type="Label" parent="Background/ScrollContainer/VBoxContainer/Zupa_Warzywna_Ciepla"]
+margin_left = 300.0
+margin_top = 16.0
+margin_right = 480.0
+margin_bottom = 14.0
+text = "Cipla Zupa prawie warzywna"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opis" type="Label" parent="Background/ScrollContainer/VBoxContainer/Zupa_Warzywna_Ciepla"]
+margin_left = 250.0
+margin_top = 32.0
+margin_right = 530.0
+margin_bottom = 96.0
+text = "Przywraca 50 glodu. Wyglada prawie jak smaczna jarzynowa."
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "	"
+}
+
+[node name="Przycisk_zupa_ciepla" type="TextureButton" parent="Background/ScrollContainer/VBoxContainer/Zupa_Warzywna_Ciepla"]
+margin_left = 100.0
+margin_top = 32.0
+margin_right = 163.109
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wyswietl" type="Container" parent="Background"]
+margin_left = 204.0
+margin_top = -303.0
+margin_right = 583.0
+margin_bottom = -4.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Ramka" type="TextureButton" parent="Background/Wyswietl"]
+margin_left = 158.0
+margin_top = 118.0
+margin_right = 222.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Nazwa" type="Label" parent="Background/Wyswietl"]
+margin_left = 64.0
+margin_top = 90.0
+margin_right = 316.0
+margin_bottom = 104.0
+align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Jeden_Skladnik" type="Container" parent="Background"]
+margin_left = 204.0
+margin_top = 3.0
+margin_right = 583.0
+margin_bottom = 303.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="jeden" type="TextureButton" parent="Background/Jeden_Skladnik"]
+margin_left = 158.0
+margin_top = 100.0
+margin_right = 222.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="need" type="Label" parent="Background/Jeden_Skladnik"]
+margin_right = 379.0
+margin_bottom = 50.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ilosc1" type="Label" parent="Background/Jeden_Skladnik"]
+margin_left = 142.0
+margin_top = 125.0
+margin_right = 182.0
+margin_bottom = 139.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dwa_Skladniki" type="Container" parent="Background"]
+margin_left = 204.0
+margin_top = 3.0
+margin_right = 583.0
+margin_bottom = 303.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="jeden" type="TextureButton" parent="Background/Dwa_Skladniki"]
+margin_left = 110.0
+margin_top = 100.0
+margin_right = 174.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="dwa" type="TextureButton" parent="Background/Dwa_Skladniki"]
+margin_left = 206.0
+margin_top = 100.0
+margin_right = 270.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="need" type="Label" parent="Background/Dwa_Skladniki"]
+margin_right = 379.0
+margin_bottom = 50.0
+align = 1
+
+[node name="ilosc1" type="Label" parent="Background/Dwa_Skladniki"]
+margin_left = 94.0
+margin_top = 125.0
+margin_right = 134.0
+margin_bottom = 139.0
+
+[node name="ilosc2" type="Label" parent="Background/Dwa_Skladniki"]
+margin_left = 190.0
+margin_top = 125.0
+margin_right = 230.0
+margin_bottom = 139.0
+
+[node name="Trzy_Skladniki" type="Container" parent="Background"]
+margin_left = 204.0
+margin_top = 3.0
+margin_right = 583.0
+margin_bottom = 303.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="jeden" type="TextureButton" parent="Background/Trzy_Skladniki"]
+margin_left = 62.0
+margin_top = 100.0
+margin_right = 126.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="dwa" type="TextureButton" parent="Background/Trzy_Skladniki"]
+margin_left = 158.0
+margin_top = 100.0
+margin_right = 222.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="trzy" type="TextureButton" parent="Background/Trzy_Skladniki"]
+margin_left = 254.0
+margin_top = 100.0
+margin_right = 318.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="need" type="Label" parent="Background/Trzy_Skladniki"]
+margin_right = 379.0
+margin_bottom = 40.0
+align = 1
+max_lines_visible = 5
+
+[node name="ilosc1" type="Label" parent="Background/Trzy_Skladniki"]
+margin_left = 46.0
+margin_top = 125.0
+margin_right = 86.0
+margin_bottom = 139.0
+
+[node name="ilosc2" type="Label" parent="Background/Trzy_Skladniki"]
+margin_left = 142.0
+margin_top = 125.0
+margin_right = 182.0
+margin_bottom = 139.0
+
+[node name="ilosc3" type="Label" parent="Background/Trzy_Skladniki"]
+margin_left = 238.0
+margin_top = 125.0
+margin_right = 278.0
+margin_bottom = 139.0
+
+[node name="Przycisk" type="Container" parent="Background"]
+margin_left = 204.0
+margin_top = 3.0
+margin_right = 583.0
+margin_bottom = 303.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Craft_check" type="Button" parent="Background/Przycisk"]
+margin_left = 90.0
+margin_top = 200.0
+margin_right = 290.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="Warning" type="Panel" parent="Background"]
+self_modulate = Color( 0.31, 0.2635, 0.2635, 0.501961 )
+margin_left = 640.0
+margin_top = -360.0
+margin_right = 1920.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="W" type="Panel" parent="Background/Warning"]
+self_modulate = Color( 0.278431, 0.25098, 0.286275, 1 )
+margin_left = 480.0
+margin_top = 270.0
+margin_right = 270.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 320, 180 )
+custom_styles/panel = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blad" type="Label" parent="Background/Warning/W"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 288.0
+margin_bottom = 90.0
+text = "Wystapil blad"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="Background/Warning/W"]
+margin_left = 32.0
+margin_top = 90.0
+margin_right = 288.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 74 )
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/normal = ExtResource( 11 )
+text = "OK"
+
+[node name="Exit" type="TextureButton" parent="Background"]
+margin_left = 506.217
+margin_top = -290.824
+margin_right = 570.217
+margin_bottom = -258.824
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Background/ScrollContainer/VBoxContainer/Pieczony_Ziemniak/Przycisk_ziemniak" to="." method="_on_Przycisk_ziemniak_pressed"]
+[connection signal="pressed" from="Background/ScrollContainer/VBoxContainer/Pieczony_owoc/Przycisk_Jabklo" to="." method="_on_Przycisk_Jabklo_pressed"]
+[connection signal="pressed" from="Background/ScrollContainer/VBoxContainer/Zupa_Warzywna/Przycisk_zupa" to="." method="_on_Przycisk_zupa_pressed"]
+[connection signal="pressed" from="Background/ScrollContainer/VBoxContainer/Zupa_Warzywna_Ciepla/Przycisk_zupa_ciepla" to="." method="_on_Przycisk_zupa_ciepla_pressed"]
+[connection signal="pressed" from="Background/Przycisk/Craft_check" to="." method="_on_Craft_check_pressed"]
+[connection signal="pressed" from="Background/Warning/W/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Background/Exit" to="." method="_on_Exit_pressed"]

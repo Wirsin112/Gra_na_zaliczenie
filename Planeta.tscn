@@ -1,0 +1,192 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Hud/PlanetChoiceHUD.png" type="Texture" id=1]
+[ext_resource path="res://Planeta.gd" type="Script" id=2]
+[ext_resource path="res://Styles/TloKuchenka.tres" type="StyleBox" id=3]
+[ext_resource path="res://Styles/GuzikKuchenka.tres" type="StyleBox" id=4]
+[ext_resource path="res://Styles/GuzikKuchenka_Wcisniety.tres" type="StyleBox" id=5]
+[ext_resource path="res://Hud/ExitArrowCook.png" type="Texture" id=6]
+
+[node name="Planeta" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Planet_left" type="TextureButton" parent="Sprite"]
+margin_left = -446.0
+margin_top = -234.0
+margin_right = -141.0
+margin_bottom = 71.0
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Sprite/Planet_left"]
+margin_top = 315.0
+margin_right = 305.0
+margin_bottom = 515.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet_right" type="TextureButton" parent="Sprite"]
+margin_left = 141.0
+margin_top = -234.0
+margin_right = 446.0
+margin_bottom = 71.0
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Sprite/Planet_right"]
+margin_top = 315.0
+margin_right = 305.0
+margin_bottom = 515.0
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warning" type="Panel" parent="Sprite"]
+self_modulate = Color( 0.309804, 0.262745, 0.262745, 0.501961 )
+margin_left = 640.0
+margin_top = -360.0
+margin_right = 1920.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="W" type="Panel" parent="Sprite/Warning"]
+self_modulate = Color( 0.278431, 0.25098, 0.286275, 1 )
+margin_left = 480.0
+margin_top = 270.0
+margin_right = 270.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 320, 170 )
+custom_styles/panel = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="blad" type="Label" parent="Sprite/Warning/W"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 288.0
+margin_bottom = 90.0
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Sprite/Warning/W"]
+margin_left = 32.0
+margin_top = 90.0
+margin_right = 288.0
+margin_bottom = 164.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ChosePlanet" type="Panel" parent="Sprite"]
+self_modulate = Color( 0.309804, 0.262745, 0.262745, 0.501961 )
+margin_left = 640.0
+margin_top = -360.0
+margin_right = 1920.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="B" type="Panel" parent="Sprite/ChosePlanet"]
+self_modulate = Color( 0.278431, 0.25098, 0.286275, 1 )
+margin_left = 480.0
+margin_top = 270.0
+margin_right = 270.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 320, 170 )
+custom_styles/panel = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Opis" type="Label" parent="Sprite/ChosePlanet/B"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 288.0
+margin_bottom = 90.0
+text = "Potwierdz wybor planety"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Tak" type="Button" parent="Sprite/ChosePlanet/B"]
+margin_left = 32.0
+margin_top = 90.0
+margin_right = 160.0
+margin_bottom = 164.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "Tak"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Nie" type="Button" parent="Sprite/ChosePlanet/B"]
+margin_left = 160.0
+margin_top = 90.0
+margin_right = 288.0
+margin_bottom = 164.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "Nie"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="Sprite"]
+margin_left = 501.639
+margin_top = -292.215
+margin_right = 565.639
+margin_bottom = -260.215
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Sprite/Planet_left" to="." method="_on_Planet_left_pressed"]
+[connection signal="pressed" from="Sprite/Planet_right" to="." method="_on_Planet_right_pressed"]
+[connection signal="pressed" from="Sprite/Warning/W/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Sprite/ChosePlanet/B/Tak" to="." method="_on_Tak_pressed"]
+[connection signal="pressed" from="Sprite/ChosePlanet/B/Nie" to="." method="_on_Nie_pressed"]
+[connection signal="pressed" from="Sprite/Exit" to="." method="_on_Exit_pressed"]

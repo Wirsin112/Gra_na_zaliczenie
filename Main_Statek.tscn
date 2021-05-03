@@ -1,0 +1,152 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Hud/BackgroundShip.png" type="Texture" id=1]
+[ext_resource path="res://Main_Statek.gd" type="Script" id=2]
+[ext_resource path="res://Hud/AvatarHUD.png" type="Texture" id=3]
+[ext_resource path="res://Hud/HP_down.png" type="Texture" id=4]
+[ext_resource path="res://Hud/HP_progres.png" type="Texture" id=5]
+[ext_resource path="res://Hud/Food_progres.png" type="Texture" id=6]
+[ext_resource path="res://Hud/HP_frame.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 72.5252, 99.7592 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Gracz" type="Sprite" parent="Sprite"]
+position = Vector2( -506.05, -307.546 )
+texture = ExtResource( 3 )
+offset = Vector2( 16.0689, -2.43082 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hp" type="TextureProgress" parent="Sprite/Gracz"]
+margin_left = -33.0
+margin_top = -49.0
+margin_right = 163.0
+margin_bottom = -31.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+tint_under = Color( 0.6, 0.529412, 0.529412, 1 )
+tint_over = Color( 0.843137, 0.0745098, 0.0745098, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="numer_hp" type="Label" parent="Sprite/Gracz/Hp"]
+margin_right = 196.0
+margin_bottom = 18.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Food" type="TextureProgress" parent="Sprite/Gracz"]
+margin_left = -33.0
+margin_top = -28.4034
+margin_right = 121.0
+margin_bottom = -14.4034
+value = 100.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 6 )
+tint_under = Color( 0.6, 0.529412, 0.529412, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numer_food" type="Label" parent="Sprite/Gracz/Food"]
+margin_right = 154.0
+margin_bottom = 14.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plakat" type="Area2D" parent="."]
+
+[node name="plakat_hitbox" type="CollisionShape2D" parent="Plakat"]
+position = Vector2( 776.641, 272.158 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lozko" type="Area2D" parent="."]
+
+[node name="lozko_hitbox" type="CollisionPolygon2D" parent="lozko"]
+polygon = PoolVector2Array( 133.987, 353.048, 138.707, 353.992, 138.707, 360.127, 144.842, 360.599, 150.033, 355.408, 371.372, 354.464, 374, 573.644, 382, 572.644, 383, 544.644, 425, 545.644, 426, 575.644, 436, 573.644, 436, 356.644, 473, 320.644, 473, 290.644, 473, 184.644, 477, 178.644, 470, 169.644, 460, 182.644, 441, 268.644, 234, 268.644, 223, 259.644, 186, 262.644, 186, 184.644, 190, 177.644, 179, 170.644, 174, 179.644, 175, 185.644, 142, 305.644, 133, 321.644 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Nawigacja" type="Area2D" parent="."]
+
+[node name="Nawiigacja_hitbox" type="CollisionPolygon2D" parent="Nawigacja"]
+polygon = PoolVector2Array( 1047.66, 623.819, 1157.59, 624.613, 1202.83, 598.42, 1191.72, 568.26, 1227.44, 548.417, 1251.64, 516.669, 1257.99, 497.62, 1256.8, 473.016, 1242.91, 452.38, 1219.52, 437.982, 1189.79, 428.675, 1154.6, 426.448, 1115.84, 430.457, 1079.76, 441.593, 1044.12, 458.075, 1021.41, 475.448, 1002.25, 495.493, 990.226, 521.774, 990.671, 540.483, 996.462, 557.856, 1014.73, 577.455, 1032.99, 587.255, 1054.37, 592.601 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Kuchenka" type="Area2D" parent="."]
+
+[node name="Kuchenka_hitbox" type="CollisionPolygon2D" parent="Kuchenka"]
+polygon = PoolVector2Array( 172.273, 574.148, 307.249, 574.709, 311.143, 573.415, 357.195, 527.029, 357.195, 417.906, 355.192, 416.571, 219.372, 415.904, 173.654, 462.957, 172.987, 465.96 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Krafting" type="Area2D" parent="."]
+position = Vector2( 61.4489, -19.0703 )
+
+[node name="Krafting_hitbox" type="CollisionPolygon2D" parent="Krafting"]
+polygon = PoolVector2Array( -29.3392, 593.744, -29.0469, 482.912, 18.3292, 434.476, 154.447, 435.536, 107.778, 481.852, 108.132, 594.635 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Skrzynka" type="Area2D" parent="."]
+
+[node name="Skrzynka_hitbox" type="CollisionPolygon2D" parent="Skrzynka"]
+polygon = PoolVector2Array( 679.327, 462.351, 728.824, 412.146, 943.785, 413.56, 945.199, 525.283, 896.203, 576.847, 679.496, 576.217 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Drzwi" type="Area2D" parent="."]
+
+[node name="Drzwi_hitbox" type="CollisionPolygon2D" parent="Drzwi"]
+polygon = PoolVector2Array( 492.651, 525.99, 494.065, 255.876, 496.893, 241.733, 512.45, 236.784, 635.486, 236.784, 653.164, 240.319, 658.821, 260.118, 658.114, 525.283, 653.164, 530.233, 496.186, 531.647 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="mouse_entered" from="Plakat" to="." method="_on_Plakat_mouse_entered"]
+[connection signal="mouse_exited" from="Plakat" to="." method="_on_Plakat_mouse_exited"]
+[connection signal="mouse_entered" from="lozko" to="." method="_on_lozko_mouse_entered"]
+[connection signal="mouse_exited" from="lozko" to="." method="_on_lozko_mouse_exited"]
+[connection signal="input_event" from="Nawigacja" to="." method="_on_Nawigacja_input_event"]
+[connection signal="mouse_entered" from="Nawigacja" to="." method="_on_Nawigacja_mouse_entered"]
+[connection signal="mouse_exited" from="Nawigacja" to="." method="_on_Nawigacja_mouse_exited"]
+[connection signal="mouse_entered" from="Kuchenka" to="." method="_on_Kuchenka_mouse_entered"]
+[connection signal="mouse_exited" from="Kuchenka" to="." method="_on_Kuchenka_mouse_exited"]
+[connection signal="mouse_entered" from="Krafting" to="." method="_on_Krafting_mouse_entered"]
+[connection signal="mouse_exited" from="Krafting" to="." method="_on_Krafting_mouse_exited"]
+[connection signal="mouse_entered" from="Skrzynka" to="." method="_on_Skrzynka_mouse_entered"]
+[connection signal="mouse_exited" from="Skrzynka" to="." method="_on_Skrzynka_mouse_exited"]
+[connection signal="mouse_entered" from="Drzwi" to="." method="_on_Drzwi_mouse_entered"]
+[connection signal="mouse_exited" from="Drzwi" to="." method="_on_Drzwi_mouse_exited"]
